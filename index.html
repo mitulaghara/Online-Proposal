@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('love-background.jpg'); /* Replace with your image path */
+        background-size: cover; /* Ensures the image covers the entire background */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents repeating the image */
+        background-attachment: fixed; /* Ensures the background stays fixed during scrolling */
+    }
+
+    form {
+        background-color: rgb(255, 240, 240); /* Light pink with some transparency */
+        border: 2px solid #99a2ff;
+        border-radius: 10px;
+        padding: 40px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 350px;
+    }
+
+    h1 {
+        color: #ff6666; /* Soft red */
+        font-size: 3em;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        color: #cc3333; /* Darker red */
+        margin-bottom: 30px;
+        font-size: 1.8em;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    input[type="submit"] {
+        color: white;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        margin: 10px;
+        border: 2px solid #ff9999;
+        border-radius: 50px; /* Rounded buttons */
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    /* Yes button - green */
+    #yes {
+        background-color: #4CAF50; /* Green color */
+        border-color: #66ff66; /* Lighter green border */
+    }
+
+    #yes:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
+    /* No button - red */
+    #no {
+        background-color: #ff4d4d; /* Bright red */
+        border-color: #ffb3b3; /* Soft red border */
+    }
+
+    #no:hover {
+        background-color: #e60000; /* Darker red on hover */
+    }
+
+    input[type="submit"]:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(255, 153, 153, 0.8);
+    }
+
+    img {
+        margin-top: 20px;
+        width: 100px; /* Size of the image */
+    }
+</style>
+<body style="background: url(love.png);
+background-size: 100%;
+background-repeat: no-repeat;">
+    
+        <form action="page2.html" method="GET">
+    <i><b><h1>I Love You❤️</h1></b></i>
+    <h2>Will you be my girlfriend?</h2>
+    <div class="buttons">
+        <input type="submit" value="yes" id="yes">
+        <input type="submit" value="no" id="no">
+        </a>
+    </div>
+    </form>
+    <script>
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const cta = document.querySelector('.buttons');
+
+        noButton.addEventListener('mouseenter', () =>{
+            const yesIndex = Array.from(cta.children).indexOf(yesButton);
+            const noIndex = Array.from(cta.children).indexOf(noButton);
+            
+            if (yesIndex<noIndex) {
+                cta.insertBefore(noButton, yesButton); 
+            } else {
+            cta.insertBefore(yesButton, noButton);
+            }
+        })
+    </script>
+</body>
+</html>
